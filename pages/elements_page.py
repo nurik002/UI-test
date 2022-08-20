@@ -1,6 +1,8 @@
 import random
 import time
 
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.keys import Keys
 from locators.elements_page_locators import SingUpLocators, RegionLocators, FilterLocators
 from pages.base_page import BasePage
 
@@ -35,3 +37,11 @@ class ChangeRegion(BasePage):
         item.click()
 
 
+class Filter(BasePage):
+    locators = FilterLocators()
+
+    def price_slider(self):
+        slider_right_button = self.element_is_visible(self.locators.RIGHT_SLIDE_BUTTON)
+        slider_left_button = self.element_is_visible(self.locators.LEFT_SLIDE_BUTTON1)
+        ActionChains(self.driver).drag_and_drop_by_offset(slider_right_button, 60, 0).pause(1).perform()
+        ActionChains(self.driver).drag_and_drop_by_offset(slider_left_button, -60, 0).perform()

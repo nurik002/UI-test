@@ -22,6 +22,10 @@ class TestElements:
                 region.click_button()
                 region.change_region()
                 count -= 1
-                time.sleep(2)
 
-
+    class TestFilter:
+        def test_filter(self, driver):
+            filter = Filter(driver, "https://texnomart.uz/kr/katalog/smartfony")
+            filter.open()
+            filter.price_slider()
+            time.sleep(3)

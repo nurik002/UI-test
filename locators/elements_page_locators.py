@@ -19,3 +19,8 @@ class RegionLocators:
     ITEMS = (By.CSS_SELECTOR, "div[class='header-region-list'] ul li a")
 
 
+class FilterLocators:
+    # price slider locators
+    RIGHT_SLIDE_BUTTON = (By.CSS_SELECTOR, "div[aria-valuetext='933000']")
+    LEFT_SLIDE_BUTTON1 = (By.CSS_SELECTOR, "div[aria-valuetext='17000000']")
+
