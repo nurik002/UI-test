@@ -17,10 +17,28 @@ class SingUpLocators:
 class RegionLocators:
     BUTTON = (By.CSS_SELECTOR, "div[class='header-region'] button")
     ITEMS = (By.CSS_SELECTOR, "div[class='header-region-list'] ul li a")
+    ACTIVE_REGION = (By.CSS_SELECTOR, "span[class='region-text text-white-desktop']")
 
 
 class FilterLocators:
+    DOWN = (By.TAG_NAME, 'html')
     # price slider locators
     RIGHT_SLIDE_BUTTON = (By.CSS_SELECTOR, "div[aria-valuetext='933000']")
     LEFT_SLIDE_BUTTON1 = (By.CSS_SELECTOR, "div[aria-valuetext='17000000']")
 
+    # model filter locators
+    MODEL_MORE_BUTTON = (
+        By.CSS_SELECTOR, "div[class='accordion-item mb-24']:nth-child(3) span[class='f-12 w-bold text']:first-child")
+    # ITEMS = (By.CSS_SELECTOR, "div[class='accordion-item mb-24']:nth-child(3) label span")
+    ITEMS = (By.CSS_SELECTOR, "div[class='accordion-item mb-24']:nth-child(3) label input")
+    PROCESSOR = (By.CSS_SELECTOR, "div[class='accordion-item mb-24']:nth-child(12)")
+    PROCESSOR_MORE = (
+        By.CSS_SELECTOR, "div[class='accordion-item mb-24']:nth-child(12) span[class='f-12 w-bold text']:first-child")
+
+
+class CheckLinkLocators:
+    LINK = (By.CSS_SELECTOR, "ul[class='header-bottom-list'] li:nth-child(2) a")
+    SELECT = (By.XPATH, "//select[@id='Skills']")
+    PASS = (By.XPATH, "//input[@ng-model='CPassword']")
+    # UPLOAD = (By.XPATH, "//input[@name='input4[]']")
+    UPLOAD = (By.XPATH, "//input[@id='js-file-input']")
